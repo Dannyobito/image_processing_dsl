@@ -21,19 +21,16 @@ def t_FORMAT(t):
     t.value = t.value.upper()  # Convert to uppercase for consistency
     return t
 
-
 # Define how to match an input path
 def t_INPATH(t):
     r'\".*?\"'  # Match paths enclosed in double quotes
     t.value = t.value.strip('"')  # Remove the quotes
-    print(f"INPATH: {t.value}")  # Print the token value
     return t
 
 # Define how to match an output path
 def t_OUTPATH(t):
     r'\'[^\']*?\''  # Match paths enclosed in single quotes
     t.value = t.value.strip("'")  # Remove the quotes
-    print(f"OUTPATH: {t.value}")  # Print the token value
     return t
 
 # Ignore whitespace characters
